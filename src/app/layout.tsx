@@ -1,29 +1,41 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./global.css"
-import { RootProvider } from "fumadocs-ui/provider"
+import './global.css';
+import { cn } from '@/lib/cn';
+import { RootProvider } from 'fumadocs-ui/provider';
+import { Geist as createSans } from 'next/font/google';
+import { Geist_Mono as createMono } from 'next/font/google';
+import type { ReactNode } from 'react';
+const sans = createSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: 'variable',
+});
 
-const inter = Inter({ subsets: ["latin"] })
+const mono = createMono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  weight: 'variable',
+});
 
-export const metadata: Metadata = {
-  title: "Documentation",
-  description: "Beautiful documentation built with Next.js",
-    generator: 'v0.app'
-}
+type LayoutProps = {
+  readonly children: ReactNode;
+};
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-       <RootProvider>
-        {children}
-       </RootProvider>
-      </body>
-    </html>
-  )
-}
+const Layout = ({ children }: LayoutProps) => (
+  <html
+    lang="en"
+    className={cn(
+      'touch-manipulation scroll-smooth font-sans antialiased',
+      sans.variable,
+      mono.variable
+    )}
+    suppressHydrationWarning
+  >
+    <body className="flex min-h-screen flex-col">
+        <RootProvider>
+          {children}
+        </RootProvider>
+    </body>
+  </html>
+);
+
+export default Layout;

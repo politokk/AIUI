@@ -14,8 +14,8 @@ export function baseOptions(): BaseLayoutProps {
         <>
           <div
             style={{
-              width: "24px",
-              height: "24px",
+              width: "20px",
+              height: "20px",
               borderRadius: "50%",
               background: "linear-gradient(90deg, hsla(154, 100%, 76%, 1) 0%, hsla(234, 100%, 83%, 1) 50%, hsla(288, 100%, 81%, 1) 100%)",
             }}

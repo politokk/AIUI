@@ -46,7 +46,7 @@ function SearchAIActions(props: ComponentProps<'div'>) {
           type="button"
           className={cn(
             buttonVariants({
-              color: 'secondary',
+              variant: 'secondary',
               size: 'sm',
               className: 'rounded-full gap-1.5',
             }),
@@ -61,7 +61,7 @@ function SearchAIActions(props: ComponentProps<'div'>) {
         type="button"
         className={cn(
           buttonVariants({
-            color: 'secondary',
+            variant: 'secondary',
             size: 'sm',
             className: 'rounded-full',
           }),
@@ -113,7 +113,7 @@ function SearchAIInput(props: ComponentProps<'form'>) {
           type="button"
           className={cn(
             buttonVariants({
-              color: 'secondary',
+              variant: 'secondary',
               className: 'rounded-full mt-2 gap-2',
             }),
           )}
@@ -127,9 +127,9 @@ function SearchAIInput(props: ComponentProps<'form'>) {
           type="submit"
           className={cn(
             buttonVariants({
-              color: 'ghost',
+              variant: 'ghost',
               className: 'transition-full rounded-full mt-2',
-              size: 'icon-sm',
+              size: 'icon',
             }),
           )}
           disabled={input.length === 0}
@@ -296,8 +296,8 @@ export default function AISearch(props: DialogProps) {
               tabIndex={-1}
               className={cn(
                 buttonVariants({
-                  size: 'icon-sm',
-                  color: 'ghost',
+                  size: 'icon',
+                  variant: 'ghost',
                   className: 'absolute top-1 end-1 text-fd-muted-foreground',
                 }),
               )}
