@@ -101,8 +101,8 @@ export function CodeBlock({
       dir="ltr"
       {...props}
       className={cn(
-        isTab ? [bg, 'rounded-lg'] : 'my-4 rounded-xl bg-fd-card p-1 border-none',
-        'shiki relative border-none shadow-none outline-none not-prose overflow-hidden text-sm',
+        isTab ? [bg, 'rounded-lg'] : 'my-4 rounded-xl bg-fd-card p-1',
+          'shiki relative border shadow-sm outline-none not-prose overflow-hidden text-sm',
         props.className,
       )}
     >
@@ -206,7 +206,7 @@ export function CodeBlockTabs({ ref, ...props }: ComponentProps<typeof Tabs>) {
       ref={mergeRefs(containerRef, ref)}
       {...props}
       className={cn(
-        'bg-fd-card p-1 rounded-xl border-none overflow-hidden',
+        'bg-fd-card p-1 rounded-xl border overflow-hidden',
         !nested && 'my-4',
         props.className,
       )}

@@ -7,11 +7,80 @@ This page showcases all the components available in your Fumadocs installation.
 
 ## Banner
 
-The Banner component displays important announcements or messages.
+The Banner component displays important announcements or messages at the top of your site.
 
-<Banner>
-  This is an important announcement! Check out our new features.
-</Banner>
+### Default Banner
+
+<div className="not-prose">
+  <Banner changeLayout={false}>
+    This is an important announcement! Check out our new features.
+  </Banner>
+</div>
+
+### Rainbow Variant
+
+<div className="not-prose mt-4">
+  <Banner variant="rainbow" changeLayout={false}>
+    🎉 Exciting news! New components are now available.
+  </Banner>
+</div>
+
+### Custom Rainbow Colors
+
+<div className="not-prose mt-4">
+  <Banner 
+    variant="rainbow" 
+    changeLayout={false}
+    rainbowColors={[
+      'rgba(255,100,0, 0.5)',
+      'rgba(255,100,0, 0.5)',
+      'transparent',
+      'rgba(255,100,0, 0.5)',
+      'transparent',
+      'rgba(255,100,0, 0.5)',
+      'transparent',
+    ]}
+  >
+    🔥 Hot update: Custom rainbow colors!
+  </Banner>
+</div>
+
+### Closable Banner
+
+Give the banner an ID to make it closable. The state will be automatically persisted.
+
+<div className="not-prose mt-4">
+  <Banner id="demo-banner" changeLayout={false}>
+    ✨ This banner can be closed! Click the X button →
+  </Banner>
+</div>
+
+### Usage in Layout
+
+To use the banner in your root layout for site-wide announcements:
+
+```tsx
+import { Banner } from 'fumadocs-ui/components/banner';
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <Banner id="announcement">
+          🚀 New documentation site launched!
+        </Banner>
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+**Note:** Set `changeLayout={false}` when displaying banners inline in documentation to prevent layout modifications.
 
 ## Callout
 
@@ -213,7 +282,16 @@ Enable zooming on images for better detail viewing.
 
 Display a table of contents inline within your content.
 
-<InlineTOC />
+<InlineTOC 
+  items={[
+    { title: "Introduction", url: "#introduction", depth: 1 },
+    { title: "Getting Started", url: "#getting-started", depth: 2 },
+    { title: "Installation", url: "#installation", depth: 3 },
+    { title: "Configuration", url: "#configuration", depth: 3 },
+    { title: "Advanced Usage", url: "#advanced-usage", depth: 2 },
+    { title: "API Reference", url: "#api-reference", depth: 2 }
+  ]}
+/>
 
 ## GitHub Info
 
