@@ -1,0 +1,6 @@
+git add .
+git commit -m "navss"
+git push origin main    
+
+git reset --hard 2d877ea
+git push origin main --force
