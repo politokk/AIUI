@@ -4,21 +4,7 @@
     "pages": [
       "---Introduction---",
       "index",
-      "philosophy",
-      "structure",
-      "updates",
-      "faq",
-      "---Setup---",
-      "setup/prerequisites",
-      "setup/installation",
-      "setup/env",
-      "---Examples---",
-      "examples/ai-chatbot",
-      "---Deployment---",
-      "deployment/vercel",
-      "deployment/netlify",
-      "---CSS---",
-      "design-system"
+      "design-tokens"
     ]
   }
   
