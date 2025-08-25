@@ -22,7 +22,9 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
       <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+      <DocsDescription className="text-sm mb-1">
+        {page.data.description}
+      </DocsDescription>
       <PageActions markdownUrl={page.data.title ?? ''} githubUrl={page.data.title ?? '' } />
       <Separator />
       <DocsBody>
