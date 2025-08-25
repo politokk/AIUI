@@ -18,6 +18,12 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   if (!page) notFound();
 
   const MDXContent = page.data.body;
+  
+  // Get all pages to find previous and next
+  const allPages = source.getPages();
+  const currentIndex = allPages.findIndex(p => p.url === page.url);
+  const previousPage = currentIndex > 0 ? allPages[currentIndex - 1] : null;
+  const nextPage = currentIndex < allPages.length - 1 ? allPages[currentIndex + 1] : null;
 
   return (
     <div className="flex flex-col">
@@ -41,7 +47,12 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
       <DocsDescription className="text-lg mb-1">
         {page.data.description}
       </DocsDescription>
-      <PageActions markdownUrl={page.data.title ?? ''} githubUrl={page.data.title ?? '' } />
+      <PageActions 
+        markdownUrl={page.data.title ?? ''} 
+        githubUrl={page.data.title ?? ''} 
+        previousPage={previousPage ? { url: previousPage.url, title: previousPage.data.title } : null}
+        nextPage={nextPage ? { url: nextPage.url, title: nextPage.data.title } : null}
+      />
       <Separator />
       <DocsBody>
         <MDXContent

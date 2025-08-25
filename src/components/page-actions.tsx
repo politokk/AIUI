@@ -3,6 +3,8 @@ import { useMemo, useState } from 'react';
 import {
   Check,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Copy,
   ExternalLinkIcon,
   MessageCircleIcon,
@@ -16,6 +18,7 @@ import {
   PopoverTrigger,
 } from 'fumadocs-ui/components/ui/popover';
 import { cva } from 'class-variance-authority';
+import Link from 'next/link';
 
 const cache = new Map<string, string>();
 
@@ -55,7 +58,7 @@ export function LLMCopyButton({
       disabled={isLoading}
       className={cn(
         buttonVariants({
-          variant: 'secondary',
+          variant: 'outline',
           size: 'sm',
           className: 'gap-2 [&_svg]:size-3.5 [&_svg]:text-fd-muted-foreground',
         }),
@@ -217,7 +220,7 @@ export function ViewOptions({
       <PopoverTrigger
         className={cn(  
           buttonVariants({
-            variant: 'secondary',
+            variant: 'outline',
             size: 'sm',
             className: 'gap-2',
           }),
@@ -248,14 +251,50 @@ export function ViewOptions({
 export function PageActions({
   markdownUrl,
   githubUrl,
+  previousPage,
+  nextPage,
 }: {
   markdownUrl: string;
   githubUrl: string;
+  previousPage?: { url: string; title: string } | null;
+  nextPage?: { url: string; title: string } | null;
 }) {
   return (
     <div className="flex flex-row gap-2">
       <LLMCopyButton markdownUrl={markdownUrl} />
       <ViewOptions markdownUrl={markdownUrl} githubUrl={githubUrl} />
+      
+      <div className="flex items-center gap-1">
+        <Link
+          href={previousPage?.url || '#'}
+          className={cn(
+            buttonVariants({
+              variant: 'outline',
+              size: 'icon',
+            }),
+            !previousPage && 'pointer-events-none opacity-50'
+          )}
+          aria-label="Previous page"
+          title={previousPage ? `Previous: ${previousPage.title}` : 'No previous page'}
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </Link>
+        
+        <Link
+          href={nextPage?.url || '#'}
+          className={cn(
+            buttonVariants({
+              variant: 'outline',
+              size: 'icon',
+            }),
+            !nextPage && 'pointer-events-none opacity-50'
+          )}
+          aria-label="Next page"
+          title={nextPage ? `Next: ${nextPage.title}` : 'No next page'}
+        >
+          <ChevronRight className="h-4 w-4" />
+        </Link>
+      </div>
     </div>
   );
 }
