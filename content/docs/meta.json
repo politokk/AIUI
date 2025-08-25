@@ -1,11 +1,22 @@
 {
     "title": "Getting Started",
     "root": true,
-    "icon": "",
     "pages": [
-      "---Getting Started---",
+      "---Introduction---",
       "index",
-      "test"
+      "philosophy",
+      "structure",
+      "updates",
+      "faq",
+      "---Setup---",
+      "setup/prerequisites",
+      "setup/installation",
+      "setup/env",
+      "---Examples---",
+      "examples/ai-chatbot",
+      "---Deployment---",
+      "deployment/vercel",
+      "deployment/netlify"
     ]
   }
   

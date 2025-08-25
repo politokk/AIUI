@@ -14,7 +14,9 @@ import { Tab, Tabs } from '@/components/tabs';
 import { TypeTable } from '@/components/type-table';
 import { Installer } from '@/components/installer';
 import { Installation } from '@/components/installation';
-
+import { Authors } from './components/authors';
+import { Mermaid } from './components/mermaid';
+import { VercelButton } from './components/vercel';
 // use this function to get MDX components, you will need it for rendering MDX
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
@@ -41,5 +43,12 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     TypeTable,
     Installer,
     Installation,
+    Authors,
+    Warning: ({ children }) => <Callout type="warning">{children}</Callout>,
+    Tip: ({ children }) => <Callout type="info">{children}</Callout>,
+    Info: ({ children }) => <Callout type="info">{children}</Callout>,
+    Note: ({ children }) => <Callout type="info">{children}</Callout>,
+    Mermaid,
+    VercelButton,
   };
 }
