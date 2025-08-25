@@ -219,10 +219,10 @@ body {
   background-color: #4d54ea10 !important;
 }
 #nd-sidebar [data-active="true"] {
-    @apply bg-primary-foreground/60 text-primary text-sm rounded-lg py-1.5 mb-1 ;
+    @apply bg-primary-foreground/60 text-primary text-sm rounded-lg py-1.5 mb-1 [&_svg]:text-primary;
   }
   #nd-sidebar [data-active="false"] {
-      @apply text-sm rounded-lg py-1.5 mb-1 ;
+      @apply text-sm rounded-lg py-1.5 mb-1 hover:[&_svg]:text-primary;
     }
 .fd-step:before {
   @apply bg-primary-foreground text-primary font-semibold border-b border-border last:border-0;
