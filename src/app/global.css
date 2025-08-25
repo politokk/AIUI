@@ -180,42 +180,7 @@ h3 {
   @apply tracking-tight;
 }
 
-/* Fix Fumadocs theme toggle icons */
-[data-theme-toggle] svg {
-  @apply fill-none;
-}
 
-#nd-subnav [data-active="true"] {
-  @apply  text-primary bg-primary-foreground/60;
-}
-#nd-tocnav {
-  @apply translate-y-px;
-}
-
-#nd-sidebar [data-hide-if-empty] {
-  @apply hidden;
-}
-
-/* Hide unnecessary links on mobile */
-#nd-sidebar-mobile a[href="/"],
-#nd-sidebar-mobile a[href="/docs"].lg\:hidden {
-  @apply hidden;
-}
-
-.landing-page #nd-subnav button[data-search] + button {
-  @apply hidden;
-}
-
-/* Style active sidebar items with primary-foreground background */
-#nd-sidebar [data-active="true"] {
-  @apply bg-primary-foreground/60 text-primary text-sm rounded-lg py-1.5 ;
-}
-
-/* Also apply to nested menu items */
-#nd-sidebar [data-sidebar="menu-button"][data-active="true"],
-#nd-sidebar [data-sidebar="menu-sub-button"][data-active="true"] {
-  @apply bg-primary-foreground/60 text-primary;
-}
 
 /* Hide scrollbars for Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
@@ -257,6 +222,17 @@ body {
   color: #4d54ea !important;
   background-color: #4d54ea10 !important;
 }
+
+#nd-sidebar [data-active="true"] {
+    @apply bg-primary-foreground/60 text-primary text-sm rounded-lg py-1.5 mb-1 ;
+  }
+  #nd-sidebar [data-active="false"] {
+      @apply text-sm rounded-lg py-1.5 mb-1 ;
+    }
+.fd-step:before {
+  @apply bg-primary-foreground text-primary font-semibold border-b border-border last:border-0;
+}
+
 .fd-step:before {
   @apply bg-primary-foreground text-primary font-semibold border-b border-border last:border-0;
 }
