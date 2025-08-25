@@ -1,5 +1,5 @@
 git add .
-git commit -m "installer"
+git commit -m "metajson"
 git push origin main    
 
 git reset --hard 2d877ea
