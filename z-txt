@@ -1,5 +1,5 @@
 git add .
-git commit -m "pageactionsmb"
+git commit -m "folderpage"
 git push origin main    
 
 git reset --hard 2d877ea

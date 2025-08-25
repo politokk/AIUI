@@ -1,0 +1,10 @@
+{
+  "title": "Design System",
+  "pages": [
+    "components",
+    "colors",
+    "typography",
+    "dark-mode",
+    "provider"
+  ]
+}

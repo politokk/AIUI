@@ -16,7 +16,9 @@
       "examples/ai-chatbot",
       "---Deployment---",
       "deployment/vercel",
-      "deployment/netlify"
+      "deployment/netlify",
+      "---CSS---",
+      "design-system"
     ]
   }
   
