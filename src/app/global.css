@@ -186,7 +186,7 @@ h3 {
 }
 
 #nd-subnav [data-active="true"] {
-  @apply font-medium text-primary bg-primary-foreground/60;
+  @apply  text-primary bg-primary-foreground/60;
 }
 #nd-tocnav {
   @apply translate-y-px;
@@ -208,7 +208,7 @@ h3 {
 
 /* Style active sidebar items with primary-foreground background */
 #nd-sidebar [data-active="true"] {
-  @apply bg-primary-foreground/60 text-primary font-medium;
+  @apply bg-primary-foreground/60 text-primary text-sm rounded-lg py-1.5 ;
 }
 
 /* Also apply to nested menu items */

@@ -1,6 +1,7 @@
 {
     "title": "Components",
     "description": "AI-focused components built for modern applications",
+    "icon": "Component",
     "pages": [
       "accordion",
       "codeblock"
