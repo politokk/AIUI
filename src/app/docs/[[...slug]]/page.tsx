@@ -11,7 +11,6 @@ import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
 import { PageActions } from '@/components/page-actions';
 import { Separator } from '@/components/ui/separator';
-
 export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const params = await props.params;
   const page = source.getPage(params.slug);
@@ -20,7 +19,11 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const MDXContent = page.data.body;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
+    <div className="flex flex-col">
+      <DocsPage toc={page.data.toc} full={page.data.full} footer={{
+        enabled: true,
+        className: "mt-16 pt-8 border-t-2 border-fd-border/50"
+      }}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription className="text-sm mb-1">
         {page.data.description}
@@ -35,6 +38,7 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
         />
       </DocsBody>
     </DocsPage>
+    </div>
   );
 }
 
