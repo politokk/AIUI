@@ -1,0 +1,11 @@
+{
+    "title": "Getting Started",
+    "root": true,
+    "icon": "",
+    "pages": [
+      "---Getting Started---",
+      "index",
+      "test"
+    ]
+  }
+  
