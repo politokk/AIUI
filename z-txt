@@ -1,5 +1,5 @@
 git add .
-git commit -m "navss"
+git commit -m "installer"
 git push origin main    
 
 git reset --hard 2d877ea
