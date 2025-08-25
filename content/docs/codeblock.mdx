@@ -1,0 +1,23 @@
+---
+title: Codeblock
+description: The CodeBlock component provides enhanced code display with syntax highlighting.
+icon: Terminal
+---
+  <div className="bg-fd-background rounded-lg prose-no-margin">
+    ```js title="config.js"
+    import createMDX from 'fumadocs-mdx/config';
+
+    const withMDX = createMDX();
+
+    // [!code word:config]
+    /** @type {import('next').NextConfig} */
+    const config = {
+      // [!code highlight]
+      reactStrictMode: true, // [!code highlight]
+    }; // [!code highlight]
+
+    export default withMDX(config);
+    ```
+  </div>
+
+<Installation name="codeblock" />

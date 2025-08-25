@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 export function Steps({ children }: { children: ReactNode }) {
-  return <div className="fd-steps">{children}</div>;
+  return <div className="fd-steps bg">{children}</div>;
 }
 
 export function Step({ children }: { children: ReactNode }) {

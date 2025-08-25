@@ -12,6 +12,8 @@ import { InlineTOC } from '@/components/inline-toc';
 import { Step, Steps } from '@/components/steps';
 import { Tab, Tabs } from '@/components/tabs';
 import { TypeTable } from '@/components/type-table';
+import { Installer } from '@/components/installer';
+import { Installation } from '@/components/installation';
 
 // use this function to get MDX components, you will need it for rendering MDX
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
@@ -37,5 +39,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     Tab,
     Tabs,
     TypeTable,
+    Installer,
+    Installation,
   };
 }

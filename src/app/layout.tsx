@@ -1,9 +1,13 @@
 import './global.css';
-import { cn } from '@/lib/cn';
+import { cn } from '@/lib/utils';
 import { RootProvider } from 'fumadocs-ui/provider';
 import { Geist as createSans } from 'next/font/google';
 import { Geist_Mono as createMono } from 'next/font/google';
 import type { ReactNode } from 'react';
+import { Toaster } from '../components/ui/sonner';
+import { TooltipProvider } from '../components/ui/tooltip';
+import { ThemeProvider } from './providers/theme';
+
 const sans = createSans({
   subsets: ['latin'],
   variable: '--font-sans',
@@ -31,9 +35,12 @@ const Layout = ({ children }: LayoutProps) => (
     suppressHydrationWarning
   >
     <body className="flex min-h-screen flex-col">
+      <ThemeProvider>
         <RootProvider>
-          {children}
+          <TooltipProvider>{children}</TooltipProvider>
         </RootProvider>
+      </ThemeProvider>
+      <Toaster />
     </body>
   </html>
 );
