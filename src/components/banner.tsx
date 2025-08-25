@@ -28,7 +28,7 @@ export function Banner({
   /**
    * @defaultValue 'normal'
    */
-  variant?: BannerVariant;
+  variant?: BannerVariant;  
 
   /**
    * For rainbow variant only, customise the colors
@@ -100,10 +100,10 @@ export function Banner({
           }}
           className={cn(
             buttonVariants({
-              color: 'ghost',
+              variant: 'ghost',
               className:
                 'absolute end-2 top-1/2 -translate-y-1/2 text-fd-muted-foreground/50',
-              size: 'icon-sm',
+              size: 'iconSm',
             }),
           )}
         >
