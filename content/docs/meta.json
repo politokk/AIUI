@@ -2,10 +2,9 @@
     "title": "Getting Started",
     "root": true,
     "pages": [
-      "---Introduction---",
-      "index",
-      "---Components---",
-      "codeblock",
-      "accordion"
+      "---Home---",
+      "home/introduction",
+      "---UI---",
+      "components"
     ]
   }
