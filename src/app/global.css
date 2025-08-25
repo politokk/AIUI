@@ -1,8 +1,7 @@
 @import "tailwindcss";
-@import "fumadocs-ui/css/shadcn.css";
 @import "fumadocs-ui/css/preset.css";
-@import 'fumadocs-twoslash/twoslash.css';
-@import 'fumadocs-ui/css/shadcn.css';
+@import "fumadocs-ui/css/shadcn.css";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,7 +43,6 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-
 :root {
   --radius: 0.6rem;
   --background: hsl(0 0% 100%);
@@ -75,7 +73,6 @@
   --sidebar-border: hsl(220 13% 91%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
   --tooltip: hsl(234.5 89.5% 73.9%);
-  
 
 }
 
@@ -181,7 +178,6 @@ h3 {
 }
 
 
-
 /* Hide scrollbars for Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
   display: none !important;
@@ -222,17 +218,12 @@ body {
   color: #4d54ea !important;
   background-color: #4d54ea10 !important;
 }
-
 #nd-sidebar [data-active="true"] {
     @apply bg-primary-foreground/60 text-primary text-sm rounded-lg py-1.5 mb-1 ;
   }
   #nd-sidebar [data-active="false"] {
       @apply text-sm rounded-lg py-1.5 mb-1 ;
     }
-.fd-step:before {
-  @apply bg-primary-foreground text-primary font-semibold border-b border-border last:border-0;
-}
-
 .fd-step:before {
   @apply bg-primary-foreground text-primary font-semibold border-b border-border last:border-0;
 }
