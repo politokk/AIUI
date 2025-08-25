@@ -138,18 +138,22 @@ Accordions help organize content in collapsible sections.
 
 The CodeBlock component provides enhanced code display with syntax highlighting.
 
-<CodeBlock lang="typescript" title="example.ts">
-{`interface User {
-  id: string;
-  name: string;
-  email: string;
-}
+  <div className="bg-fd-background rounded-lg prose-no-margin">
+    ```js title="config.js"
+    import createMDX from 'fumadocs-mdx/config';
 
-function greetUser(user: User): string {
-  return \`Hello, \${user.name}!\`;
-}`}
-</CodeBlock>
+    const withMDX = createMDX();
 
+    // [!code word:config]
+    /** @type {import('next').NextConfig} */
+    const config = {
+      // [!code highlight]
+      reactStrictMode: true, // [!code highlight]
+    }; // [!code highlight]
+
+    export default withMDX(config);
+    ```
+  </div>
 ## Files
 
 Display file and folder structures clearly.
@@ -298,8 +302,8 @@ Display a table of contents inline within your content.
 Display repository information from GitHub.
 
 <GithubInfo
-  owner="fuma-nama"
-  repo="fumadocs"
+  owner="politokk"
+  repo="AIUI"
 />
 
 ## Standard Code Blocks
